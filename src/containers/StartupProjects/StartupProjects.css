@@ -1,0 +1,84 @@
+.startup-projects-main {
+  display: flex;
+}
+
+.startup-projects-main > * {
+  margin-bottom: 10px;
+}
+
+.starup-project-image > img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.project-card-head {
+  color: rgb(36, 41, 46);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0px;
+}
+
+.startup-project-title {
+  font-size: 12px;
+}
+
+.startup-project-text {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.project-card-description {
+  color: rgb(88, 96, 105);
+}
+
+@media screen and (min-width: 100px) and (max-width: 520px) {
+  .grid-item {
+    grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 860px) {
+  .grid-item {
+    grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 860px) and (max-width: 1260px) {
+  .grid-item {
+    grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .grid-item {
+    grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    width: 100%;
+  }
+}
+
+.nextu-div {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .starup-project-image {
+    display: none;
+  }
+  .project-subtitle{
+    font-size: 16px;
+    text-align: center;
+  }
+}
