@@ -132,10 +132,28 @@ const workExperiences = {
   viewExperiences: true, //Set it to true to show workExperiences Section
   experience: [
     {
+      role: "Android Developer",
+      company: "Neon",
+      companylogo: require("./assets/images/neon.png"),
+      date: "Mar 2021 – Present",
+      desc: "Development of a top level confidential research project and Development at a BaaS project using PIX",
+      descBullets: [
+        "Development for Native Android",
+        "Developing new features to their fintech app: shorturl.at/hjrAB",
+        "Development for Native Android (Kotlin and Java)",
+        "Using Retrofit Gson(Legacy) and Moshi",
+        "Using Dagger",
+        "Using MVP(Legacy) and MVVM",
+        "Using Live Data",
+        "Using Junit Test and Integration test",
+        "Crash-free app with Crashlytics (99.3% users)"
+      ]
+    },
+    {
       role: "Software Engineer",  
       company: "Venturus",
       companylogo: require("./assets/images/venturus.png"),
-      date: "Dez 2019 – Present",
+      date: "Dez 2019 – Mar 2021",
       desc: "Development of a top level confidential research project and Development at a BaaS project using PIX",
       descBullets: [
         "Development for Native Android",
@@ -200,9 +218,9 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/99run.png"),
-      link: "https://www.99run.com/",
-      title: "99 Run"
+      image: require("./assets/images/upmedal.png"),
+      link: "https://www.upmedal.com",
+      title: "Upmedal"
     },
     {
       image: require("./assets/images/polepurpose.png"),
@@ -211,7 +229,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/stome.png"),
-      link: "https://www.stomechallenge.com/",
+      link: "https://www.facebook.com/StomeChallenge/",
       title: "Stome"
     },
     {
@@ -287,7 +305,7 @@ const podcastSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle: "Want to Discuss a project? My Inbox is open for all.",
-  number: "+55 (16) 92000-3861",
+  number: "https://t.me/lucasnicolau",
   email_address: "lucas.nicolau.developer@gmail.com"
 };
 
