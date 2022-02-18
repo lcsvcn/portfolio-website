@@ -9,7 +9,7 @@
     "colorthief": "^2.3.0",
     "graphql": "^14.7.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.14.0",
     "react-easy-emoji": "^1.6.1",
     "react-reveal": "^1.2.2",
     "react-scripts": "3.2.0",
