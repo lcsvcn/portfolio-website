@@ -15,7 +15,7 @@ jobs:
         if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
         with:
           # Create a personal access token and store it under the Secrets section of the particular repository
-          # with the key "GITHUB_ACTIONS_TOKEN"
+          # with the key "AUTO_MERGE_TOKEN"
           github-token: ${{ secrets.AUTO_MERGE_TOKEN }}
   automerge:
     name: Auto merge after successful checks
