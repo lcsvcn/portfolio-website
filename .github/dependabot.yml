@@ -8,7 +8,7 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     commit-message:
-      prefix: "[dependabot][actions]"
+      prefix: "[bot][actions]"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -18,4 +18,4 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
     commit-message:
-      prefix: "[dependabot][npm]"
+      prefix: "[bot][npm]"
