@@ -6,6 +6,63 @@ import Button from "../../components/button/Button";
 import Loading from "../loading/Loading";
 import { openSource, socialMediaLinks } from "../../portfolio";
 
+function getRepoData() {
+  const client = new ApolloClient({
+    uri: "https://api.github.com/graphql",
+    request: (operation) => {
+      operation.setContext({
+        headers: {
+          authorization: `Bearer ${openSource.githubConvertedToken}`,
+        },
+      });
+    },
+  });
+
+  client
+    .query({
+      query: gql`
+      {
+      user(login: "${openSource.githubUserName}") {
+        pinnedItems(first: 6, types: [REPOSITORY]) {
+          totalCount
+          edges {
+            node {
+              ... on Repository {
+                name
+                description
+                forkCount
+                stargazers {
+                  totalCount
+                }
+                url
+                id
+                diskUsage
+                primaryLanguage {
+                  name
+                  color
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      `,
+    })
+    .then((result) => {
+      setrepoFunction(result.data.user.pinnedItems.edges);
+      console.log(result);
+    })
+    .catch(function (error) {
+      console.log(error);
+      setrepoFunction("Error");
+      console.log("Because of this Error, nothing is shown in place of Projects section. Projects section not configured");
+    });
+}
+
+function setrepoFunction(array) {
+  setrepo(array);
+}
 
 export default function Projects() {
   const GithubRepoCard = lazy(() => import('../../components/githubRepoCard/GithubRepoCard'));
@@ -17,63 +74,6 @@ export default function Projects() {
     getRepoData();
   }, []);
 
-  function getRepoData() {
-    const client = new ApolloClient({
-      uri: "https://api.github.com/graphql",
-      request: (operation) => {
-        operation.setContext({
-          headers: {
-            authorization: `Bearer ${openSource.githubConvertedToken}`,
-          },
-        });
-      },
-    });
-
-    client
-      .query({
-        query: gql`
-        {
-        user(login: "${openSource.githubUserName}") {
-          pinnedItems(first: 6, types: [REPOSITORY]) {
-            totalCount
-            edges {
-              node {
-                ... on Repository {
-                  name
-                  description
-                  forkCount
-                  stargazers {
-                    totalCount
-                  }
-                  url
-                  id
-                  diskUsage
-                  primaryLanguage {
-                    name
-                    color
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-        `,
-      })
-      .then((result) => {
-        setrepoFunction(result.data.user.pinnedItems.edges);
-        console.log(result);
-      })
-      .catch(function (error) {
-        console.log(error);
-        setrepoFunction("Error");
-        console.log("Because of this Error, nothing is shown in place of Projects section. Projects section not configured");
-      });
-  }
-
-  function setrepoFunction(array) {
-    setrepo(array);
-  }
   if (!(typeof repo === 'string' || repo instanceof String)){
   return (
     <Suspense fallback={renderLoader()}>
