@@ -139,7 +139,7 @@ const workExperiences = {
     {
       role: "Integration Engineer",
       company: "SdkCo",
-      companylogo: require("./assets/images/sdkco.png"),
+      companylogo: require("./assets/images/sdkco.webp"),
       date: "Feb 2022 – Present",
       desc: "Development using blockchain, mobile, web3, and much more.",
       descBullets: [
@@ -154,7 +154,7 @@ const workExperiences = {
     {
       role: "Android Developer",
       company: "Neon",
-      companylogo: require("./assets/images/neon.png"),
+      companylogo: require("./assets/images/neon.webp"),
       date: "Mar 2021 – Feb 2022",
       desc: "Development of a top level confidential research project and Development at a BaaS project using PIX",
       descBullets: [
@@ -172,7 +172,7 @@ const workExperiences = {
     {
       role: "Software Engineer",  
       company: "Venturus",
-      companylogo: require("./assets/images/venturus.png"),
+      companylogo: require("./assets/images/venturus.webp"),
       date: "Dez 2019 – Mar 2021",
       desc: "Development of a top level confidential research project and Development at a BaaS project using PIX",
       descBullets: [
@@ -191,7 +191,7 @@ const workExperiences = {
     {
       role: "Full Stack Developer",   
       company: "FlipOn Car",
-      companylogo: require("./assets/images/flipon.png"),
+      companylogo: require("./assets/images/flipon.webp"),
       date: "Feb 2019 – Dez 2019", 
       desc: "Leader Developer",
       descBullets: [
@@ -208,7 +208,7 @@ const workExperiences = {
     {
       role: "Tracking and Tags Analyst",  
       company: "Raccoon - Digital Marketing",
-      companylogo: require("./assets/images/raccoon.png"),
+      companylogo: require("./assets/images/raccoon.webp"),
       date: "Feb 2018 – Feb 2019",
       desc: "Tags and Tracking development",
       descBullets: [
@@ -238,37 +238,37 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/upmedal.png"),
+      image: require("./assets/images/upmedal.webp"),
       link: "https://www.upmedal.com",
       title: "Upmedal"
     },
     {
-      image: require("./assets/images/polepurpose.png"),
+      image: require("./assets/images/polepurpose.webp"),
       link: "https://www.polepurpose.com/",   
       title: "Pole Purpose"
     },
     {
-      image: require("./assets/images/stome.png"),
+      image: require("./assets/images/stome.webp"),
       link: "https://www.facebook.com/StomeChallenge/",
       title: "Stome"
     },
     {
-      image: require("./assets/images/keyglee.png"),
+      image: require("./assets/images/keyglee.webp"),
       link: "https://www.keygleedeals.com/",
       title: "Keyglee Deals"
     },
     {
-      image: require("./assets/images/unbox.png"),
+      image: require("./assets/images/unbox.webp"),
       link: "https://www.unboxapp.com/",
       title: "Unbox"
     },
     {
-      image: require("./assets/images/bananabuzz.png"),
+      image: require("./assets/images/bananabuzz.webp"),
       link: "https://play.google.com/store/apps/details?id=com.bananabuzz.callrecorder",
       title: "Banana Buzz"
     },
     {
-      image: require("./assets/images/tuneurl.png"),
+      image: require("./assets/images/tuneurl.webp"),
       link: "https://github.com/jaap-dekkinga/pp_turl_android",
       title: "TuneURL"
     }
