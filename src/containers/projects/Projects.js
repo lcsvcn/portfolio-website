@@ -6,7 +6,7 @@ import Button from "../../components/button/Button";
 import Loading from "../loading/Loading";
 import { openSource, socialMediaLinks } from "../../portfolio";
 
-function getRepoData() {
+function getRepoData(callback) {
   const client = new ApolloClient({
     uri: "https://api.github.com/graphql",
     request: (operation) => {
@@ -50,19 +50,17 @@ function getRepoData() {
       `,
     })
     .then((result) => {
-      setrepoFunction(result.data.user.pinnedItems.edges);
+      callback(result.data.user.pinnedItems.edges);
       console.log(result);
     })
     .catch(function (error) {
       console.log(error);
-      setrepoFunction("Error");
+      callback("Error");
       console.log("Because of this Error, nothing is shown in place of Projects section. Projects section not configured");
     });
 }
 
-function setrepoFunction(array) {
-  setrepo(array);
-}
+
 
 export default function Projects() {
   const GithubRepoCard = lazy(() => import('../../components/githubRepoCard/GithubRepoCard'));
@@ -71,8 +69,12 @@ export default function Projects() {
   const [repo, setrepo] = useState([]);
 
   useEffect(() => {
-    getRepoData();
+    getRepoData(setrepoFunction);
   }, []);
+
+  function setrepoFunction(array) {
+    setrepo(array);
+  }
 
   if (!(typeof repo === 'string' || repo instanceof String)){
   return (
