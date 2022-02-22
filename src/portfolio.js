@@ -269,7 +269,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/tuneurl.png"),
-      link: "https://play.google.com/store/apps/details?id=com.dekidea.tuneurl",
+      link: "https://github.com/jaap-dekkinga/pp_turl_android",
       title: "TuneURL"
     }
   ]
