@@ -35,7 +35,8 @@ const skillsSection = {
     emoji("⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"),
     emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
     emoji("⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"),
-    emoji("⚡ Integration with payment services such as PagarMe, Stripe, Ebanx")
+    emoji("⚡ Integration with payment services such as PagarMe, Stripe, Ebanx"),
+    emoji("⚡ Integration with blockchain top-level technologies")
   ],
 
 /* Make Sure You include correct Font Awesome Classname to view your icon
@@ -93,6 +94,10 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "docker",
       fontAwesomeClassname: "fab fa-docker"
+    },
+    {
+      skillName: "blockchain",
+      fontAwesomeClassname: "fab fa-btc"
     }
   ]
 };
@@ -130,12 +135,27 @@ const techStack = {
 
 const workExperiences = {
   viewExperiences: true, //Set it to true to show workExperiences Section
-  experience: [
+  experience: [ 
+    {
+      role: "Integration Engineer",
+      company: "SdkCo",
+      companylogo: require("./assets/images/sdkco.png"),
+      date: "Feb 2022 – Present",
+      desc: "Development using blockchain, mobile, web3, and much more.",
+      descBullets: [
+        "Implement middle-ware to integrate blockchains, smart contracts, CLI tools",
+        "Design and implement APIs with:",
+        "Data validation and error handling",
+        "Logging and debugging",
+        "Authentication and authorization",
+        "Basic documentation to use the API"
+      ]
+    },
     {
       role: "Android Developer",
       company: "Neon",
       companylogo: require("./assets/images/neon.png"),
-      date: "Mar 2021 – Present",
+      date: "Mar 2021 – Feb 2022",
       desc: "Development of a top level confidential research project and Development at a BaaS project using PIX",
       descBullets: [
         "Development for Native Android",
