@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
