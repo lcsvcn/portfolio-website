@@ -18,9 +18,9 @@ export default function StartupProject() {
         <p className="subTitle project-subtitle">{bigProjects.subtitle}</p>
         <div className="startup-projects-main">
           <div className="startup-project-text">
-            {bigProjects.projects.map(project => {
+            {bigProjects.projects.map((project, index) => {
               return (
-                <div className="grid-item" onClick={() => openProjectInNewWindow(project.link)}>
+                <div key={index} className="grid-item" onClick={() => openProjectInNewWindow(project.link)}>
                   <img alt={project.title} src={project.image}></img>
                   <p className="startup-project-title">{project.title}</p>
                 </div>

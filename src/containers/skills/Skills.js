@@ -10,7 +10,7 @@ export default function Skills() {
       <div className="skills-main-div">
         <Fade left duration={1000}>
         <div className="skills-image-div">
-          <img alt="Saad Working" src={require("../../assets/images/programmer.svg")}></img>
+          <img alt="Lucas Working" src={require("../../assets/images/programmer.svg")}></img>
         </div>
         </Fade>
         <Fade right duration={1000}>
@@ -19,8 +19,8 @@ export default function Skills() {
           <p className="subTitle skills-text-subtitle">{skillsSection.subTitle}</p>
           <SoftwareSkill />
           <div>
-            {skillsSection.skills.map(skills => {
-              return <p className="subTitle skills-text">{skills}</p>;
+            {skillsSection.skills.map((skills, index) => {
+              return <p key={index} className="subTitle skills-text">{skills}</p>;
             })}
           </div>
         </div>
