@@ -12,17 +12,19 @@ export default function Talks() {
         <h1 className="talk-header-title">{talkSection.title}</h1>
         <p className="subTitle talk-header-subtitle">{talkSection.subtitle}</p>
         <div className="talk-cards-div">
-          {talkSection.talks.map(talk => {
-            return (
-              <TalkCard
-                talkDetails={{
-                  title: talk.title,
-                  subtitle: talk.subtitle,
-                  slides_url: talk.slides_url,
-                  event_url: talk.event_url,
-                  image: talk.image
-                }}
-              />
+            {talkSection.talks.map((talk, index) => {
+              return (
+              <div key={index}>
+                <TalkCard
+                  talkDetails={{
+                    title: talk.title,
+                    subtitle: talk.subtitle,
+                    slides_url: talk.slides_url,
+                    event_url: talk.event_url,
+                    image: talk.image
+                      }}
+                />
+              </div>
             );
           })}
         </div>

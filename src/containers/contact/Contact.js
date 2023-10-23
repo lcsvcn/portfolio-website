@@ -3,6 +3,7 @@ import "./Contact.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {contactInfo} from "../../portfolio";
 import { Fade } from "react-reveal";
+import workingMan from "../../assets/images/contactMail.webp";
 
 export default function Contact() {
     return (
@@ -23,7 +24,7 @@ export default function Contact() {
                     </div>
                 </div>
                 <div className="contact-image-div">
-                    <img alt="Lucas Working" src={require("../../assets/images/contactMail.webp")}></img>
+                    <img alt="Lucas Working" src={workingMan}></img>
                 </div>
             </div>
         </div>

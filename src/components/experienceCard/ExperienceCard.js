@@ -16,7 +16,7 @@ export default function ExperienceCard({ cardInfo }) {
   }
 
   const GetDescBullets = ({ descBullets }) => {
-    return descBullets ? descBullets.map((item) => <li className="subTitle">{item}</li>) : null
+    return descBullets ? descBullets.map((item, index) => <li key={index} className="subTitle">{item}</li>) : null
   };
 
   return (

@@ -16,17 +16,18 @@ export default function WorkExperience() {
                         <div className="experience-cards-div">
                         {workExperiences.experience.map((card, index) => {
                             return (
+                                <div key={index}> 
                                 <ExperienceCard
-                                    key={index}
                                     cardInfo={{
                                         company: card.company,
                                         desc: card.desc,
                                         date: card.date,
                                         companylogo: card.companylogo,
                                         role: card.role,
-                                        descBullets: card.descBullets
+                                        descBullets: card.descBullets,
                                     }}
-                                />
+                                    />
+                                </div>
                             );
                         })}
                         </div>
