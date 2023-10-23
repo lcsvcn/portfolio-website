@@ -2,6 +2,7 @@ import React from "react";
 import "./Progress.css";
 import { techStack } from "../../portfolio";
 import { Fade } from "react-reveal";
+import skills from "../../assets/images/skill.svg";
 
 export default function StackProgress() {
     if(techStack.viewSkillBars){
@@ -27,7 +28,7 @@ export default function StackProgress() {
                 </div>
 
                 <div className="skills-image">
-                    <img alt="Skills" src={require("../../assets/images/skill.svg")} />
+                    <img alt="Skills" src={skills} />
                 </div>
 
             </div>
