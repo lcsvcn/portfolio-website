@@ -1,7 +1,7 @@
 {
   "homepage": "https://lcsvcn.github.io/",
   "name": "lcsvcn.github.io",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
