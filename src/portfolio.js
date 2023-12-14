@@ -64,6 +64,14 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-python"
     },
     {
+      skillName: "django",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "fast api",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
       skillName: "fastlane",
       fontAwesomeClassname: "fas fa-robot"
     },
@@ -80,6 +88,10 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-react"
     },
     {
+      skillName: "nextjs",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
     },
@@ -90,6 +102,10 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
+    },
+    {
+      skillName: "gcp",
+      fontAwesomeClassname: "fab fa-google"
     },
     {
       skillName: "docker",
@@ -135,7 +151,45 @@ const techStack = {
 
 const workExperiences = {
   viewExperiences: true, //Set it to true to show workExperiences Section
-  experience: [ 
+  experience: [
+    {
+      role: "Senior Software Engineer",
+      company: "Expensify",
+      companylogo: require("./assets/images/expensify.webp"),
+      date: "Out 2022 – now",
+      desc: "Frontend Development using React.js and React Native",
+      "descBullets": [
+        "Find and report bugs in the new platform",
+        "Implemented bug fixes using React.js and React Native",
+        ]
+    },
+    {
+      role: "Software Engineer",
+      company: "Immersive Fox",
+      companylogo: require("./assets/images/immersive-fox.webp"),
+      date: "Out 2022 – Aug 2023",
+      desc: "Full-Stack Development using React.js, Next.js and Django",
+      descBullets: [
+        "Implement front-end components using React.js and Next.js",
+        "Design and implement APIs using Django",
+        "Infrastructure development using AWS and GCP",
+      ]
+    },
+    {
+      role: "Integration Engineer",
+      company: "We The Culture",
+      companylogo: require("./assets/images/wetheculture.webp"),
+      date: "Apr 2022 – Out 2022",
+      desc: "Development using blockchain, mobile, web3, and much more.",
+      descBullets: [
+        "Implement middle-ware to integrate blockchains, smart contracts, CLI tools",
+        "Design and implement APIs with:",
+        "Data validation and error handling",
+        "Logging and debugging",
+        "Authentication and authorization",
+        "Basic documentation to use the API"
+      ]
+    },
     {
       role: "Integration Engineer",
       company: "SdkCo",
@@ -184,7 +238,7 @@ const workExperiences = {
         "Develop for a new payment type (PIX)",
         "Develop with a big development team, developing the solution from scratch",
         "Development of Mobile App using Flutter",
-        "Development of Web Dashboard using React",
+        "Development of Web Dashboard using React.js",
         "Development of backend using Java"
       ]
     },
