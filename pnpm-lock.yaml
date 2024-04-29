@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@apollo/react-hooks':
     specifier: ^4.0.0
-    version: 4.0.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.0)
+    version: 4.0.0(graphql@16.8.1)(react-dom@18.3.0)(react@18.3.0)
   apollo-boost:
     specifier: ^0.4.9
     version: 0.4.9(graphql@16.8.1)
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^18.3.0
     version: 18.3.0
   react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.3.0)
+    specifier: ^18.3.0
+    version: 18.3.0(react@18.3.0)
   react-easy-emoji:
     specifier: ^1.8.1
     version: 1.8.1(react@18.3.0)
@@ -34,7 +34,7 @@ dependencies:
     version: 5.0.1(@babel/plugin-syntax-flow@7.22.5)(@babel/plugin-transform-react-jsx@7.22.15)(eslint@8.52.0)(react@18.3.0)(typescript@5.2.2)
   react-twitter-embed:
     specifier: 4.0.4
-    version: 4.0.4(react-dom@18.2.0)(react@18.3.0)
+    version: 4.0.4(react-dom@18.3.0)(react@18.3.0)
 
 devDependencies:
   gh-pages:
@@ -73,7 +73,7 @@ packages:
       leven: 3.1.0
     dev: false
 
-  /@apollo/client@3.10.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.0):
+  /@apollo/client@3.10.1(graphql@16.8.1)(react-dom@18.3.0)(react@18.3.0):
     resolution: {integrity: sha512-QNacQBZzJla5UQ/LLBXJWM7/1v1C5cfpMQPAFjW4hg4T54wHWbg4Dr+Dp6N+hy/ygu8tepdM+/y/5VFLZhovlQ==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
@@ -101,7 +101,7 @@ packages:
       optimism: 0.18.0
       prop-types: 15.8.1
       react: 18.3.0
-      react-dom: 18.2.0(react@18.3.0)
+      react-dom: 18.3.0(react@18.3.0)
       rehackt: 0.1.0(react@18.3.0)
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
@@ -112,10 +112,10 @@ packages:
       - '@types/react'
     dev: false
 
-  /@apollo/react-hooks@4.0.0(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.0):
+  /@apollo/react-hooks@4.0.0(graphql@16.8.1)(react-dom@18.3.0)(react@18.3.0):
     resolution: {integrity: sha512-fCu0cbne3gbUl0QbA8X4L33iuuFVQbC5Jo2MIKRK8CyawR6PoxDpFdFA1kc6033ODZuZZ9Eo4RdeJFlFIIYcLA==}
     dependencies:
-      '@apollo/client': 3.10.1(graphql@16.8.1)(react-dom@18.2.0)(react@18.3.0)
+      '@apollo/client': 3.10.1(graphql@16.8.1)(react-dom@18.3.0)(react@18.3.0)
     transitivePeerDependencies:
       - '@types/react'
       - graphql
@@ -8875,14 +8875,14 @@ packages:
       - vue-template-compiler
     dev: false
 
-  /react-dom@18.2.0(react@18.3.0):
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+  /react-dom@18.3.0(react@18.3.0):
+    resolution: {integrity: sha512-zaKdLBftQJnvb7FtDIpZtsAIb2MZU087RM8bRDZU8LVCCFYjPTsDZJNFUWPcVz3HFSN1n/caxi0ca4B/aaVQGQ==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.3.0
     dependencies:
       loose-envify: 1.4.0
       react: 18.3.0
-      scheduler: 0.23.0
+      scheduler: 0.23.2
     dev: false
 
   /react-easy-emoji@1.8.1(react@18.3.0):
@@ -9025,7 +9025,7 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /react-twitter-embed@4.0.4(react-dom@18.2.0)(react@18.3.0):
+  /react-twitter-embed@4.0.4(react-dom@18.3.0)(react@18.3.0):
     resolution: {integrity: sha512-2JIL7qF+U62zRzpsh6SZDXNI3hRNVYf5vOZ1WRcMvwKouw+xC00PuFaD0aEp2wlyGaZ+f4x2VvX+uDadFQ3HVA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -9033,7 +9033,7 @@ packages:
       react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.3.0
-      react-dom: 18.2.0(react@18.3.0)
+      react-dom: 18.3.0(react@18.3.0)
       scriptjs: 2.5.9
     dev: false
 
@@ -9401,8 +9401,8 @@ packages:
       xmlchars: 2.2.0
     dev: false
 
-  /scheduler@0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
     dev: false
