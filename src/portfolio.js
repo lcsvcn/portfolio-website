@@ -148,13 +148,13 @@ const workExperiences = {
   experience: [
     {
       role: "Senior Software Engineer",
-      company: "Expensify",
-      companylogo: require("./assets/images/expensify.webp"),
-      date: "Out 2022 – now",
-      desc: "Frontend Development using React.js and React Native",
+      company: "TeacherAI",
+      companylogo: require("./assets/images/teacherai.webp"),
+      date: "Aug 2022 – now",
+      desc: "Frontend Development using Next.Js/React.js and React Native. Backend development using Fast Api and Node.js",
       "descBullets": [
-        "Find and report bugs in the new platform",
-        "Implemented bug fixes using React.js and React Native",
+        "Implement api with microservice with Fast API, Nest.js and Prisma with AWS and GCP as host",
+        "Design and implement using React.js/Next.js and React Native",
         ]
     },
     {
