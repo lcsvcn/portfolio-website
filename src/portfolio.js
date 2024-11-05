@@ -159,7 +159,7 @@ const workExperiences = {
     },
     {
       role: "Software Engineer",
-      company: "Immersive Fox",
+      company: "Stealth Startup",
       companylogo: require("./assets/images/immersive-fox.webp"),
       date: "Out 2022 – Aug 2023",
       desc: "Full-Stack Development using React.js, Next.js and Django",
