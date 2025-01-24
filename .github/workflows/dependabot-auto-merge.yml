@@ -1,37 +1,39 @@
-name: Auto approve and merge PRs by dependabot
+name: Auto approve and merge PRs by Dependabot (with your identity)
 
-# Trigger the workflow on pull request
 on:
-  pull_request
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   autoapprove:
-    name: Auto Approve a PR by dependabot # Name of the job
-    runs-on: ubuntu-latest # Environment on which the job runs
+    name: Auto Approve PRs by Dependabot
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' }}
     steps:
+      - name: Configure Git Author
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your.email@example.com"
+
       - name: Auto approve
-        uses: hmarr/auto-approve-action@v4.0.0 # Custom action for auto approval already available on marketplace
-        # Perform the auto approve action only when the PR is raised by dependabot
-        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+        uses: hmarr/auto-approve-action@v4.0.0
         with:
-          # Create a personal access token and store it under the Secrets section of the particular repository
-          # with the key "AUTO_MERGE_TOKEN"
           github-token: ${{ secrets.AUTO_MERGE_TOKEN }}
+
   automerge:
-    name: Auto merge after successful checks
-    # By default, jobs run in parallel. To run the jobs sequentially, they keywords "needs" is needed.
-    # Auto merge action can be done only when the PR is approved, hence this automerge needs autoapprove as a prerequisite
+    name: Auto Merge After Successful Checks
     needs: autoapprove
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]' }}
     steps:
+      - name: Configure Git Author
+        run: |
+          git config --global user.name "lcsvcn"
+          git config --global user.email "6011385+lcsvcn@users.noreply.github.com"
+
       - name: Auto merge
-        # Custom action for auto merging already available on marketplace
         uses: pascalgn/automerge-action@v0.16.4
-        # Perform the auto merge action only when the PR is raised by dependabot
-        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
         env:
           GITHUB_TOKEN: ${{ secrets.AUTO_MERGE_TOKEN }}
-          # By default, whenever dependabot raises a PR, it automatically assigns a label named "dependencies"
-          # So, this action merges those PRs labelled "dependencies" only
           MERGE_LABELS: dependencies
           MERGE_METHOD: rebase
