@@ -18,7 +18,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/lcsvcn",
   gitlab: "https://gitlab.com/lcsvcn",
-  linkedin: "https://www.linkedin.com/in/lucas-vieira-costa-nicolau-0aa973a4/",
+  linkedin: "https://www.linkedin.com/in/lucas-vieira-costa-nicolau/",
   gmail: "lucas.nicolau.developer@gmail.com",
   upwork: "https://www.upwork.com/freelancers/~01686d9f62c3ed0541"
   // Instagram and Twitter are also supported in the links!
@@ -159,7 +159,7 @@ const workExperiences = {
     },
     {
       role: "Software Engineer",
-      company: "Immersive Fox",
+      company: "Stealth Startup",
       companylogo: require("./assets/images/immersive-fox.webp"),
       date: "Out 2022 – Aug 2023",
       desc: "Full-Stack Development using React.js, Next.js and Django",
