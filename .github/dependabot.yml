@@ -6,7 +6,7 @@ updates:
     target-branch: "main"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     commit-message:
       prefix: "[bot][actions]"
 
@@ -16,6 +16,6 @@ updates:
     target-branch: "main"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     commit-message:
       prefix: "[bot][npm]"
