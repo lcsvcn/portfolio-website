@@ -1,7 +1,7 @@
 import React from "react";
 import "./Progress.css";
 import { techStack } from "../../portfolio";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import skills from "../../assets/images/skill.svg";
 
 export default function StackProgress() {

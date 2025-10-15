@@ -1,21 +1,26 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
-import ApolloClient from "apollo-boost";
-import { gql } from "apollo-boost";
+import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 import "./Project.css";
 import Button from "../../components/button/Button";
 import Loading from "../loading/Loading";
 import { openSource, socialMediaLinks } from "../../portfolio";
 
 function getRepoData(callback) {
+  const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
+
+  const authLink = setContext((_, { headers }) => {
+    return {
+      headers: {
+        ...headers,
+        authorization: `Bearer ${openSource.githubConvertedToken}`,
+      },
+    };
+  });
+
   const client = new ApolloClient({
-    uri: "https://api.github.com/graphql",
-    request: (operation) => {
-      operation.setContext({
-        headers: {
-          authorization: `Bearer ${openSource.githubConvertedToken}`,
-        },
-      });
-    },
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
   });
 
   client

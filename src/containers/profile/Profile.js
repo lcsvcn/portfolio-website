@@ -1,5 +1,6 @@
 import React, { useState, useEffect ,lazy, Suspense } from "react";
-import ApolloClient, { gql } from "apollo-boost";
+import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 import { openSource } from "../../portfolio";
 import Contact from "../contact/Contact";
 import Loading from "../loading/Loading";
@@ -12,15 +13,20 @@ export default function Profile() {
     setrepo(array);
   }
   function getProfileData() {
+    const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
+
+    const authLink = setContext((_, { headers }) => {
+      return {
+        headers: {
+          ...headers,
+          authorization: `Bearer ${openSource.githubConvertedToken}`,
+        },
+      };
+    });
+
     const client = new ApolloClient({
-      uri: "https://api.github.com/graphql",
-      request: (operation) => {
-        operation.setContext({
-          headers: {
-            authorization: `Bearer ${openSource.githubConvertedToken}`,
-          },
-        });
-      },
+      link: authLink.concat(httpLink),
+      cache: new InMemoryCache(),
     });
 
     client
