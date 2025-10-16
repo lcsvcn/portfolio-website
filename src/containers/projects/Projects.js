@@ -1,6 +1,6 @@
 import { ApolloClient, createHttpLink, gql, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import "./Project.css";
 import Button from "../../components/button/Button";
 import { openSource, socialMediaLinks } from "../../portfolio";
@@ -67,19 +67,20 @@ function getRepoData(callback) {
     });
 }
 
+const FailedLoading = () => null;
+const renderLoader = () => <Loading />;
+
 export default function Projects() {
   const GithubRepoCard = lazy(() => import("../../components/githubRepoCard/GithubRepoCard"));
-  const FailedLoading = () => null;
-  const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
+
+  const setrepoFunction = useCallback((array) => {
+    setrepo(array);
+  }, []);
 
   useEffect(() => {
     getRepoData(setrepoFunction);
   }, [setrepoFunction]);
-
-  function setrepoFunction(array) {
-    setrepo(array);
-  }
 
   if (!(typeof repo === "string" || repo instanceof String)) {
     return (

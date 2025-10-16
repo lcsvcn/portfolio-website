@@ -11,10 +11,10 @@ export default function Podcast() {
           <p className="subTitle podcast-header-subtitle">{podcastSection.subtitle}</p>
         </div>
         <div className="podcast-main-div">
-          {podcastSection.podcast.map((podcastLink) => {
+          {podcastSection.podcast.map((podcastLink, index) => {
             return (
-              <div>
-                <iframe className="podcast" src={podcastLink} frameborder="0" scrolling="no"></iframe>
+              <div key={index}>
+                <iframe className="podcast" src={podcastLink} title={`Podcast ${index + 1}`} frameborder="0" scrolling="no"></iframe>
               </div>
             );
           })}

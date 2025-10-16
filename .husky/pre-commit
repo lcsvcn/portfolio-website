@@ -1,2 +1,2 @@
-bunx --bun biome check --write --unsafe ./src
+bunx --bun biome check --write ./src
 bunx --bun biome format --write ./src

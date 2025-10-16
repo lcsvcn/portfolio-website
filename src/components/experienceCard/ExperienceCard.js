@@ -2,6 +2,16 @@ import { createRef, useState } from "react";
 import "./ExperienceCard.css";
 import ColorThief from "colorthief";
 
+const GetDescBullets = ({ descBullets }) => {
+  return descBullets
+    ? descBullets.map((item, index) => (
+        <li key={index} className="subTitle">
+          {item}
+        </li>
+      ))
+    : null;
+};
+
 export default function ExperienceCard({ cardInfo }) {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = createRef();
@@ -14,16 +24,6 @@ export default function ExperienceCard({ cardInfo }) {
   function rgb(values) {
     return typeof values === "undefined" ? null : `rgb(${values.join(", ")})`;
   }
-
-  const GetDescBullets = ({ descBullets }) => {
-    return descBullets
-      ? descBullets.map((item, index) => (
-          <li key={index} className="subTitle">
-            {item}
-          </li>
-        ))
-      : null;
-  };
 
   return (
     <div className="experience-card">
