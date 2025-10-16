@@ -7,17 +7,18 @@
     "@apollo/client": "^3.7.14",
     "colorthief": "^2.6.0",
     "graphql": "^16.11.0",
-  "react": "^19.2.0",
-  "react-dom": "^19.2.0",
-  "react-easy-emoji": "^1.8.1",
-  "react-awesome-reveal": "^4.0.0",
-  "react-scripts": "5.0.1"
+    "posthog-js": "^1.276.0",
+    "react": "^19.2.0",
+    "react-awesome-reveal": "^4.0.0",
+    "react-dom": "^19.2.0",
+    "react-easy-emoji": "^1.8.1",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
-  "predeploy": "npm run build",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-  "deploy": "gh-pages -b gh-pages -d build",
+    "deploy": "gh-pages -b gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
