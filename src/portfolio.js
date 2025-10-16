@@ -200,21 +200,6 @@ const workExperiences = {
       ]
     },
     {
-      role: "Integration Engineer",
-      company: "SdkCo",
-      companylogo: require("./assets/images/sdkco.webp"),
-      date: "Feb 2022 – Present",
-      desc: "Development using blockchain, mobile, web3, and much more.",
-      descBullets: [
-        "Implement middle-ware to integrate blockchains, smart contracts, CLI tools",
-        "Design and implement APIs with:",
-        "Data validation and error handling",
-        "Logging and debugging",
-        "Authentication and authorization",
-        "Basic documentation to use the API"
-      ]
-    },
-    {
       role: "Android Developer",
       company: "Neon",
       companylogo: require("./assets/images/neon.webp"),
