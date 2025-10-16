@@ -9,7 +9,7 @@ const greeting = {
   /* Your Summary And Greeting Section */
   username: "Lucas Nicolau",
   title: "Hi, I am Lucas",
-  subTitle: emoji(" I am the Senior Software Developer, with +8 years of experience, with over 10 applications published over Google Play and App Store 🧑‍💻 A vast experience building Web and Mobile applications using Kotlin / Java / Flutter / React Native/ JavaScript / Reactjs / Nextjs / Python / Django and some other cool libraries and frameworks. "),
+  subTitle: emoji(" I am the Senior Software Developer, with +9 years of experience, with over 10 applications published over Google Play and App Store 🧑‍💻 A vast experience building Web and Mobile applications using Kotlin / Java / Flutter / React Native/ JavaScript / Reactjs / Nextjs / Python / Django and some other cool libraries and frameworks. "),
   resumeLink: "https://drive.google.com/file/d/1w_oRVZzzzkyeyfOMph-Ql790MvXPAM7F/view?usp=sharing"
 };
 
