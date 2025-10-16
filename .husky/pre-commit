@@ -1,2 +1,2 @@
-bun run lint:fix
-bun run format:fix
+bunx --bun biome check --write --unsafe ./src
+bunx --bun biome format --write ./src

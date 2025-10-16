@@ -1,13 +1,13 @@
-import { useState, useEffect, lazy, Suspense } from "react";
-import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context';
+import { ApolloClient, createHttpLink, gql, InMemoryCache } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { lazy, Suspense, useEffect, useState } from "react";
 import "./Project.css";
 import Button from "../../components/button/Button";
-import Loading from "../loading/Loading";
 import { openSource, socialMediaLinks } from "../../portfolio";
+import Loading from "../loading/Loading";
 
 function getRepoData(callback) {
-  const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
+  const httpLink = createHttpLink({ uri: "https://api.github.com/graphql" });
 
   const authLink = setContext((_, { headers }) => {
     return {
@@ -61,15 +61,15 @@ function getRepoData(callback) {
     .catch((error) => {
       console.log(error);
       callback("Error");
-      console.log("Because of this Error, nothing is shown in place of Projects section. Projects section not configured");
+      console.log(
+        "Because of this Error, nothing is shown in place of Projects section. Projects section not configured",
+      );
     });
 }
 
-
-
 export default function Projects() {
-  const GithubRepoCard = lazy(() => import('../../components/githubRepoCard/GithubRepoCard'));
-  const FailedLoading = () => null ;
+  const GithubRepoCard = lazy(() => import("../../components/githubRepoCard/GithubRepoCard"));
+  const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
 
@@ -81,21 +81,21 @@ export default function Projects() {
     setrepo(array);
   }
 
-  if (!(typeof repo === 'string' || repo instanceof String)){
-  return (
-    <Suspense fallback={renderLoader()}>
-      <div className="main" id="opensource">
-        <h1 className="project-title">Open Source Projects</h1>
-        <div className="repo-cards-div-main">
-          {repo.map((v, _i) => {
-            return <GithubRepoCard repo={v} key={v.node.id} />;
-          })}
+  if (!(typeof repo === "string" || repo instanceof String)) {
+    return (
+      <Suspense fallback={renderLoader()}>
+        <div className="main" id="opensource">
+          <h1 className="project-title">Open Source Projects</h1>
+          <div className="repo-cards-div-main">
+            {repo.map((v, _i) => {
+              return <GithubRepoCard repo={v} key={v.node.id} />;
+            })}
+          </div>
+          <Button text={"More Projects"} className="project-button" href={socialMediaLinks.github} newTab={true} />
         </div>
-        <Button text={"More Projects"} className="project-button" href={socialMediaLinks.github} newTab={true} />
-      </div>
-    </Suspense>
-  );
-} else{
-    return(<FailedLoading />);
+      </Suspense>
+    );
+  } else {
+    return <FailedLoading />;
   }
 }

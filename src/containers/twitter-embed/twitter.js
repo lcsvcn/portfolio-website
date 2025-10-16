@@ -1,7 +1,7 @@
 import { Suspense, useEffect } from "react";
 import "./twitter.css";
-import Loading from "../loading/Loading";
 import { twitterDetails } from "../../portfolio";
+import Loading from "../loading/Loading";
 
 const renderLoader = () => <Loading />;
 const cantDisplayError = "<div class='centerContent'><h2>Can't load? Check privacy protection settings</h2></div>";
@@ -15,7 +15,7 @@ function timeOut() {
   }, 10000);
 }
 
-var _widthScreen = typeof window !== 'undefined' ? window.screen.width : 0;
+var _widthScreen = typeof window !== "undefined" ? window.screen.width : 0;
 
 export default function Twitter() {
   useEffect(() => {
@@ -23,8 +23,8 @@ export default function Twitter() {
 
     // Load widgets.js if not present
     if (!window.twttr) {
-      const script = document.createElement('script');
-      script.src = 'https://platform.twitter.com/widgets.js';
+      const script = document.createElement("script");
+      script.src = "https://platform.twitter.com/widgets.js";
       script.async = true;
       document.body.appendChild(script);
       script.onload = () => {

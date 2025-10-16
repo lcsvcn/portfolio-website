@@ -5,7 +5,7 @@
 }
 
 @media screen and (min-width: 100px) and (max-width: 520px) {
-  .startup-project-text img{
+  .startup-project-text img {
     max-width: 100%;
     width: auto;
     height: 60px;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (min-width: 520px) and (max-width: 860px) {
-  .startup-project-text img{
+  .startup-project-text img {
     max-width: 100%;
     width: auto;
     height: 80px;
@@ -24,10 +24,9 @@
   }
 }
 
-
 @media screen and (min-width: 860px) and (max-width: 1260px) {
-  .startup-project-text img{
-     max-width: 100%;
+  .startup-project-text img {
+    max-width: 100%;
     width: auto;
     height: 120px;
     object-fit: cover;
@@ -36,7 +35,7 @@
 }
 
 @media screen and (min-width: 1260px) {
-  .startup-project-text img{
+  .startup-project-text img {
     max-width: 100%;
     width: auto;
     height: 200px;
@@ -44,7 +43,6 @@
     border: 1px solid #555;
   }
 }
-
 
 .startup-project-text {
   text-align: center;
@@ -68,7 +66,7 @@
     font-size: 30px;
     text-align: center;
   }
-  .repo-cards-div-main{
+  .repo-cards-div-main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

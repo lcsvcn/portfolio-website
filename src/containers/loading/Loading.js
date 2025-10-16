@@ -1,4 +1,3 @@
-
 import "./loading.css";
 
 export default function Loading() {
@@ -19,5 +18,5 @@ export default function Loading() {
         <div className="sk-circle12 sk-child"></div>
       </div>
     </div>
-    );
+  );
 }

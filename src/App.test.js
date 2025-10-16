@@ -1,12 +1,10 @@
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-import App from './App';
-import { createRoot } from 'react-dom/client';
+it("renders without crashing", () => {
+  const container = document.createElement("div");
 
-
-it('renders without crashing', () => {
-  const container = document.createElement('div');
-
-  const root = createRoot(container); 
+  const root = createRoot(container);
   root.render(<App tab="home" />);
   root.unmount();
 });

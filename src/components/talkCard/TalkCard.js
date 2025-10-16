@@ -1,7 +1,6 @@
-
 import "./TalkCard.css";
 
-export default function TalkCard({talkDetails}) {
+export default function TalkCard({ talkDetails }) {
   return (
     <div>
       <div className="container">
