@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import "./twitter.css";
 import Loading from "../loading/Loading";
 import { twitterDetails } from "../../portfolio";
@@ -7,7 +7,7 @@ const renderLoader = () => <Loading />;
 const cantDisplayError = "<div class='centerContent'><h2>Can't load? Check privacy protection settings</h2></div>";
 
 function timeOut() {
-  setTimeout(function () {
+  setTimeout(() => {
     const el = document.getElementById("twitter");
     if (el && !el.innerHTML.includes("iframe")) {
       el.innerHTML = cantDisplayError;
@@ -15,7 +15,7 @@ function timeOut() {
   }, 10000);
 }
 
-var widthScreen = typeof window !== 'undefined' ? window.screen.width : 0;
+var _widthScreen = typeof window !== 'undefined' ? window.screen.width : 0;
 
 export default function Twitter() {
   useEffect(() => {

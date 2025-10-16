@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import "./Project.css";
@@ -58,7 +58,7 @@ function getRepoData(callback) {
       callback(result.data.user.pinnedItems.edges);
       console.log(result);
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
       callback("Error");
       console.log("Because of this Error, nothing is shown in place of Projects section. Projects section not configured");
@@ -75,7 +75,7 @@ export default function Projects() {
 
   useEffect(() => {
     getRepoData(setrepoFunction);
-  }, []);
+  }, [setrepoFunction]);
 
   function setrepoFunction(array) {
     setrepo(array);
@@ -87,7 +87,7 @@ export default function Projects() {
       <div className="main" id="opensource">
         <h1 className="project-title">Open Source Projects</h1>
         <div className="repo-cards-div-main">
-          {repo.map((v, i) => {
+          {repo.map((v, _i) => {
             return <GithubRepoCard repo={v} key={v.node.id} />;
           })}
         </div>

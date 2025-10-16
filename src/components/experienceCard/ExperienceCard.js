@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import { useState, createRef } from "react";
 import "./ExperienceCard.css";
 import ColorThief from "colorthief";
 
@@ -12,7 +12,7 @@ export default function ExperienceCard({ cardInfo }) {
   }
 
   function rgb(values) {
-    return typeof values === "undefined" ? null : "rgb(" + values.join(', ') + ")";
+    return typeof values === "undefined" ? null : `rgb(${values.join(', ')})`;
   }
 
   const GetDescBullets = ({ descBullets }) => {

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
 import emoji from "react-easy-emoji";

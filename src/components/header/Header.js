@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Header.css";
 import { Fade } from "react-awesome-reveal";
 import {greeting, workExperiences} from "../../portfolio";

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Talks.css";
 import TalkCard from "../../components/talkCard/TalkCard";
 import { talkSection } from "../../portfolio";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect ,lazy, Suspense } from "react";
+import { useState, useEffect ,lazy, Suspense } from "react";
 import { ApolloClient, InMemoryCache, gql, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import { openSource } from "../../portfolio";
@@ -46,7 +46,7 @@ export default function Profile() {
       .then((result) => {
         setProfileFunction(result.data.user);
       })
-      .catch(function (error) {
+      .catch((error) => {
           console.log(error);
           setProfileFunction("Error");
           console.log("Because of this Error Contact Section is Showed instead of Profile");

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./BlogCard.css";
 
 export default function BlogCard({ blog }) {

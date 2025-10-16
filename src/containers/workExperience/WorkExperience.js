@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./WorkExperience.css";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import { workExperiences } from "../../portfolio";

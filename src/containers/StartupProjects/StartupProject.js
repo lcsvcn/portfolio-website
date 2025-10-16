@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./StartupProjects.css";
 import { bigProjects } from "../../portfolio";
 import { Fade } from "react-awesome-reveal";

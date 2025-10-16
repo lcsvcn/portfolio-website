@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function AchivementCard({ cardInfo }) {
   function openUrlInNewTab(url) {
@@ -17,7 +17,7 @@ export default function AchivementCard({ cardInfo }) {
           <p className="card-subtitle">{cardInfo.description}</p>
         </div>
         <div className="certificate-card-footer">
-          {cardInfo.footer.map((v, i) => {
+          {cardInfo.footer.map((v, _i) => {
             return <p onClick={() => openUrlInNewTab(v.url)}>{v.name}</p>;
           })}
         </div>

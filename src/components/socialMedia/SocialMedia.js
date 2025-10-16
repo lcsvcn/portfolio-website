@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./SocialMedia.css";
 import { socialMediaLinks } from "../../portfolio";
 

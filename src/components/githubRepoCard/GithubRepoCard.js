@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./GithubRepoCard.css";
 import { Fade } from "react-awesome-reveal";
 
