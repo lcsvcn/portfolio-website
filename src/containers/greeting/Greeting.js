@@ -4,8 +4,8 @@ import emoji from "react-easy-emoji";
 import manOnTable from "../../assets/images/manOnTable.svg";
 import Button from "../../components/button/Button";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { greeting } from "../../portfolio";
 import { usePostHogPageView, usePostHogTracker } from "../../hooks/usePostHog";
+import { greeting } from "../../portfolio";
 
 export default function Greeting() {
   // Track page view when component mounts
