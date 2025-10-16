@@ -5,8 +5,27 @@ import manOnTable from "../../assets/images/manOnTable.svg";
 import Button from "../../components/button/Button";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { greeting } from "../../portfolio";
+import { usePostHogPageView, usePostHogTracker } from "../../hooks/usePostHog";
 
 export default function Greeting() {
+  // Track page view when component mounts
+  usePostHogPageView("Home - Greeting Section");
+  const trackEvent = usePostHogTracker();
+
+  const handleContactClick = () => {
+    trackEvent("contact_button_clicked", {
+      location: "greeting_section",
+      button: "Contact me",
+    });
+  };
+
+  const handleResumeClick = () => {
+    trackEvent("resume_button_clicked", {
+      location: "greeting_section",
+      button: "See my resume",
+    });
+  };
+
   return (
     <Fade bottom duration={1000} distance="40px">
       <div className="greet-main" id="greeting">
@@ -20,8 +39,8 @@ export default function Greeting() {
               <p className="greeting-text-p subTitle">{greeting.subTitle}</p>
               <SocialMedia />
               <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                <Button text="See my resume" newTab={true} href={greeting.resumeLink} />
+                <Button text="Contact me" href="#contact" onClick={handleContactClick} />
+                <Button text="See my resume" newTab={true} href={greeting.resumeLink} onClick={handleResumeClick} />
               </div>
             </div>
           </div>
