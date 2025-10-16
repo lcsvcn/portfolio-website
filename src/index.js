@@ -13,9 +13,19 @@ root.render(
       apiKey={process.env.REACT_APP_POSTHOG_KEY}
       options={{
         api_host: process.env.REACT_APP_POSTHOG_HOST,
-        defaults: "2025-05-24",
-        capture_exceptions: true, // This enables capturing exceptions using Error Tracking
-        debug: process.env.NODE_ENV === "development",
+        person_profiles: "identified_only", // or "always" to create profiles for anonymous users
+        capture_pageview: true,
+        capture_pageleave: true,
+        autocapture: true,
+        disable_session_recording: false,
+        enable_recording_console_log: true,
+        loaded: (posthog) => {
+          if (process.env.NODE_ENV === "development") {
+            posthog.debug(true);
+            console.log("🚀 PostHog loaded successfully!");
+            console.log("User ID:", posthog.get_distinct_id());
+          }
+        },
       }}
     >
       <App />
