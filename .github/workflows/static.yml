@@ -31,17 +31,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js LTS (22.x) and build
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '22'
-      - name: Enable Corepack & install dependencies (pnpm)
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-          pnpm install --frozen-lockfile
+          bun-version: '1.2.13'
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
       - name: Build site
-        run: pnpm run build
+        run: bun run build
         shell: bash
       - name: Setup Pages
         uses: actions/configure-pages@v5
