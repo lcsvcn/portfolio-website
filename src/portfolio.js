@@ -148,6 +148,21 @@ const workExperiences = {
   experience: [
     {
       role: "Senior Software Engineer",
+      company: "Clipboard Health",
+      companylogo: require("./assets/images/clipboard-health.webp"),
+      date: "Jan 2025 – Present",
+      desc: "Developed and enhanced mobile-first healthcare scheduling platform with focus on GDPR/HIPAA compliance and real-time features.",
+      descBullets: [
+        "Launched new Expo mobile app for facility admins in 27 days, with TypeScript domain models across web and API layers",
+        "Achieved 36% increase in facility admin engagement and 22% reduction in understaffing through real-time scheduling features",
+        "Reduced kiosk queue times by 75% through UX improvements and automated workflows",
+        "Accelerated release cycles by 30% using Appflow automated deploy pipelines",
+        "Integrated AI assistant reducing scheduling time by 45%",
+        "Maintained 95% resolution rate for technical issues within 24 hours"
+      ]
+    },
+    {
+      role: "Senior Software Engineer",
       company: "TeacherAI",
       companylogo: require("./assets/images/teacherai.webp"),
       date: "Aug 2022 – now",
