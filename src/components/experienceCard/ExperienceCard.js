@@ -29,23 +29,13 @@ export default function ExperienceCard({ cardInfo, index }) {
   };
 
   return (
-    <Fade 
-      direction={isEven ? "left" : "right"} 
-      triggerOnce 
-      cascade={false}
-      delay={index * 100}
-      duration={800}
-    >
+    <Fade direction={isEven ? "left" : "right"} triggerOnce cascade={false} delay={index * 100} duration={800}>
       <div className={`timeline-item ${isEven ? "timeline-left" : "timeline-right"}`}>
         <div className="timeline-year">{year}</div>
         <div className="timeline-dot"></div>
         <div className="experience-card-horizontal">
           <div className="experience-card-header">
-            <img
-              className="experience-company-logo"
-              src={cardInfo.companylogo}
-              alt={cardInfo.company}
-            />
+            <img className="experience-company-logo" src={cardInfo.companylogo} alt={cardInfo.company} />
             <div className="experience-header-text">
               <h3 className="experience-role">{cardInfo.role}</h3>
               <h4 className="experience-company">{cardInfo.company}</h4>
@@ -56,11 +46,7 @@ export default function ExperienceCard({ cardInfo, index }) {
             <p className="experience-description">{cardInfo.desc}</p>
             {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
               <>
-                <button
-                  type="button"
-                  className="experience-toggle-btn"
-                  onClick={handleToggle}
-                >
+                <button type="button" className="experience-toggle-btn" onClick={handleToggle}>
                   {isExpanded ? "Show Less ▲" : "Show More ▼"}
                 </button>
                 <div className={`experience-bullets-container ${isExpanded ? "expanded" : ""}`}>

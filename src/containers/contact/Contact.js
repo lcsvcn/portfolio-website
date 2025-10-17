@@ -14,10 +14,11 @@ export default function Contact() {
             <p className="subTitle contact-subtitle">{contactInfo.subtitle}</p>
 
             <div className="contact-text-div">
-              {contactInfo.number && <a className="contact-detail" href={`tel:${contactInfo.number}`}>
-                {contactInfo.number}
-              </a>
-              }
+              {contactInfo.number && (
+                <a className="contact-detail" href={`tel:${contactInfo.number}`}>
+                  {contactInfo.number}
+                </a>
+              )}
               <br />
               <br />
               <a className="contact-detail-email" href={`mailto:${contactInfo.email_address}`}>
