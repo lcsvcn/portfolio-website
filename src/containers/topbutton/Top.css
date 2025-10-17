@@ -5,15 +5,13 @@
   right: 30px;
   z-index: 99;
   outline: none;
-  /* Invert background by theme; keep hand icon purple for contrast */
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  /* Purple background per design */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
-    0 8px 30px rgba(0, 0, 0, 0.4);
-  color: #7c83ff; /* purple hand */
+    0 12px 32px rgba(102, 126, 234, 0.35),
+    0 6px 14px rgba(118, 75, 162, 0.25);
+  color: #fff; /* icon inside: black on light theme */
   cursor: pointer;
   padding: 15px;
   border-radius: 20px;
@@ -22,24 +20,24 @@
 }
 
 [data-theme="dark"] #topButton {
-  /* On dark theme, switch to a lighter frosted background for contrast */
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  /* Keep the same purple background; switch icon to white for dark theme */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
-    0 8px 30px rgba(0, 0, 0, 0.12);
-  color: #7c83ff; /* keep purple */
+    0 14px 36px rgba(0, 0, 0, 0.5),
+    0 8px 18px rgba(0, 0, 0, 0.35);
+  color: #fff; /* icon inside: white on dark theme */
 }
 
 #topButton:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
-    0 12px 40px rgba(102, 126, 234, 0.25);
+    0 16px 44px rgba(102, 126, 234, 0.45),
+    0 10px 22px rgba(118, 75, 162, 0.35);
 }
 
 [data-theme="dark"] #topButton:hover {
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
-    0 12px 40px rgba(129, 140, 248, 0.3);
+    0 18px 48px rgba(0, 0, 0, 0.55),
+    0 10px 26px rgba(0, 0, 0, 0.4);
 }
