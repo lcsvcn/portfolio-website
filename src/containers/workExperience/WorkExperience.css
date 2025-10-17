@@ -1,24 +1,101 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+.experience-container {
+  display: flex;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.experience-content {
+  width: 100%;
 }
 
 .experience-heading {
   font-size: 56px;
   font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.experience-container {
+.experience-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Timeline vertical line */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 180px;
+  width: 3px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+/* Timeline Start Circle */
+.timeline-start {
   display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 3;
 }
 
-.experience-container > * {
-  flex: 1;
+.timeline-start-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.timeline-start-circle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.3;
+  animation: ripple 2s ease-out infinite;
+}
+
+.timeline-start-text {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1.5rem;
+  z-index: 1;
+  line-height: 1.4;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
 }
 
 /* Media Query */
@@ -33,5 +110,24 @@
   .experience-heading {
     font-size: 30px;
     text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .experience-timeline::before {
+    display: none;
+  }
+
+  .experience-container {
+    width: 95%;
+  }
+
+  .timeline-start-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .timeline-start-text {
+    font-size: 0.95rem;
+    padding: 1rem;
   }
 }

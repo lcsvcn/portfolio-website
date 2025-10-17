@@ -164,7 +164,7 @@ const workExperiences = {
       role: "Senior Software Engineer",
       company: "TeacherAI",
       companylogo: require("./assets/images/teacherai.webp"),
-      date: "Aug 2023 - Jan 2024",
+      date: "Aug 2023 - Jan 2025",
       desc: "Contributed to building an innovative, always-accessible AI teacher that empowers language learners worldwide to practice more than 30 languages anytime, anywhere.",
       descBullets: [
         "Led migration from Flask to FastAPI, designed microservices ecosystem using Kafka and Nest.js, improving modularity and fault tolerance",
@@ -366,7 +366,6 @@ const podcastSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle: "Want to Discuss a project? My Inbox is open for all.",
-  number: "https://t.me/lucasnicolau",
   email_address: "lucas.nicolau.developer@gmail.com",
 };
 

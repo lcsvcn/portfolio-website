@@ -1,55 +1,78 @@
-import { createRef, useState } from "react";
+import { useState } from "react";
 import "./ExperienceCard.css";
-import ColorThief from "colorthief";
+import { Fade } from "react-awesome-reveal";
 
 const GetDescBullets = ({ descBullets }) => {
   return descBullets
     ? descBullets.map((item, index) => (
-        <li key={index} className="subTitle">
+        <li key={index} className="experience-bullet" style={{ animationDelay: `${index * 0.1}s` }}>
           {item}
         </li>
       ))
     : null;
 };
 
-export default function ExperienceCard({ cardInfo }) {
-  const [colorArrays, setColorArrays] = useState([]);
-  const imgRef = createRef();
+export default function ExperienceCard({ cardInfo, index }) {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
-  }
+  // Extract year from date string (e.g., "Jan 2025 – Present" -> "2025")
+  const getYear = (dateString) => {
+    const match = dateString.match(/\d{4}/);
+    return match ? match[0] : "";
+  };
 
-  function rgb(values) {
-    return typeof values === "undefined" ? null : `rgb(${values.join(", ")})`;
-  }
+  const year = getYear(cardInfo.date);
+  const isEven = index % 2 === 0;
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
-    <div className="experience-card">
-      <div style={{ background: rgb(colorArrays) }} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
+    <Fade 
+      direction={isEven ? "left" : "right"} 
+      triggerOnce 
+      cascade={false}
+      delay={index * 100}
+      duration={800}
+    >
+      <div className={`timeline-item ${isEven ? "timeline-left" : "timeline-right"}`}>
+        <div className="timeline-year">{year}</div>
+        <div className="timeline-dot"></div>
+        <div className="experience-card-horizontal">
+          <div className="experience-card-header">
+            <img
+              className="experience-company-logo"
+              src={cardInfo.companylogo}
+              alt={cardInfo.company}
+            />
+            <div className="experience-header-text">
+              <h3 className="experience-role">{cardInfo.role}</h3>
+              <h4 className="experience-company">{cardInfo.company}</h4>
+              <p className="experience-date">{cardInfo.date}</p>
+            </div>
+          </div>
+          <div className="experience-card-body">
+            <p className="experience-description">{cardInfo.desc}</p>
+            {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
+              <>
+                <button
+                  type="button"
+                  className="experience-toggle-btn"
+                  onClick={handleToggle}
+                >
+                  {isExpanded ? "Show Less ▲" : "Show More ▼"}
+                </button>
+                <div className={`experience-bullets-container ${isExpanded ? "expanded" : ""}`}>
+                  <ul className="experience-bullets-list">
+                    <GetDescBullets descBullets={cardInfo.descBullets} />
+                  </ul>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-
-        <img
-          crossOrigin={"anonymous"}
-          ref={imgRef}
-          className="experience-roundedimg"
-          src={cardInfo.companylogo}
-          alt={cardInfo.company}
-          onLoad={() => getColorArrays()}
-        />
       </div>
-      <div className="experience-text-details">
-        <h5 className="experience-text-role">{cardInfo.role}</h5>
-        <h5 className="experience-text-date">{cardInfo.date}</h5>
-        <p className="subTitle experience-text-desc">{cardInfo.desc}</p>
-        <ul>
-          <GetDescBullets descBullets={cardInfo.descBullets} />
-        </ul>
-      </div>
-    </div>
+    </Fade>
   );
 }
