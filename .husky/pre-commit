@@ -1,6 +1,9 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# Update lockfile
+bun i
+
 # Run biome check and format
 bunx --bun biome check --write ./src
 bunx --bun biome format --write ./src

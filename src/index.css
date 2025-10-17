@@ -14,12 +14,53 @@
     url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
   font-display: swap;
 }
+
+/* CSS Variables for Light and Dark Mode */
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --shadow-sm: rgba(0, 0, 0, 0.08);
+  --shadow-md: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+  --link-color: #667eea;
+  --heading-color: #000000;
+}
+
+[data-theme="dark"] {
+  --primary-bg: #1a202c;
+  --secondary-bg: #2d3748;
+  --card-bg: #2d3748;
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e0;
+  --text-tertiary: #a0aec0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+  --link-color: #818cf8;
+  --heading-color: #f7fafc;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 html,
 body {
   scroll-behavior: smooth;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 body {
   margin: 0;

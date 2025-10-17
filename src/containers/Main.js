@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
+import { ThemeProvider } from "../contexts/ThemeContext";
 import Greeting from "./greeting/Greeting";
 import Profile from "./profile/Profile";
 import Projects from "./projects/Projects";
@@ -14,19 +15,21 @@ import WorkExperience from "./workExperience/WorkExperience";
 export default class Main extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Greeting />
-        <Skills />
-        <StackProgress />
-        <WorkExperience />
-        <Projects />
-        <Talks />
-        <StartupProject />
-        <Profile />
-        <Footer />
-        <Top />
-      </div>
+      <ThemeProvider>
+        <div>
+          <Header />
+          <Greeting />
+          <Skills />
+          <StackProgress />
+          <WorkExperience />
+          <Projects />
+          <Talks />
+          <StartupProject />
+          <Profile />
+          <Footer />
+          <Top />
+        </div>
+      </ThemeProvider>
     );
   }
 }

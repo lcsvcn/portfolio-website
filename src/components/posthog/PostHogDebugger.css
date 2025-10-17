@@ -1,7 +1,7 @@
 .posthog-debug-toggle {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   z-index: 9999;
   background: #1d4ed8;
   color: white;
@@ -23,7 +23,7 @@
 .posthog-debugger {
   position: fixed;
   bottom: 80px;
-  right: 20px;
+  left: 20px;
   width: 400px;
   max-height: 600px;
   background: white;

@@ -1,6 +1,7 @@
 import "./Header.css";
 import { Fade } from "react-awesome-reveal";
 import { greeting, workExperiences } from "../../portfolio";
+import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 
 function Header() {
   const exp = workExperiences.viewExperiences;
@@ -34,6 +35,9 @@ function Header() {
             </li>
             <li>
               <a href="#contact">Contact Me</a>
+            </li>
+            <li className="theme-toggle-item">
+              <DarkModeToggle />
             </li>
           </ul>
         </header>

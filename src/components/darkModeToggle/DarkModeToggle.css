@@ -1,0 +1,81 @@
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-track {
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode-toggle:hover .toggle-track {
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-thumb.dark {
+  transform: translateX(30px);
+  background: #1a202c;
+}
+
+.toggle-icon {
+  width: 16px;
+  height: 16px;
+  color: #667eea;
+}
+
+.toggle-thumb.dark .toggle-icon {
+  color: #fbbf24;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: 15px;
+    right: 15px;
+  }
+
+  .toggle-track {
+    width: 50px;
+    height: 26px;
+  }
+
+  .toggle-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .toggle-thumb.dark {
+    transform: translateX(24px);
+  }
+
+  .toggle-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
