@@ -2,27 +2,63 @@
 
 .header {
   position: sticky;
-  top: 0;
+  top: max(10px, env(safe-area-inset-top));
   z-index: 999;
-  max-width: 100%;
-  padding: 20px 10px;
-  margin: 0;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+  max-width: calc(100% - 40px);
+  margin: 0 20px;
+  padding: 12px 20px;
+  background: rgba(249, 249, 249, 0.72);
+  backdrop-filter: blur(40px) saturate(200%) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.05);
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
-    0 4px 30px rgba(0, 0, 0, 0.04);
+    0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  isolation: isolate; /* create new stacking context for pseudo-elements */
 }
 
 [data-theme="dark"] .header {
-  background: rgba(30, 30, 30, 0.72);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(28, 28, 30, 0.72);
+  backdrop-filter: blur(40px) saturate(200%) brightness(0.95);
+  -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(0.95);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
-    0 4px 30px rgba(0, 0, 0, 0.6);
+    0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 32px rgba(0, 0, 0, 0.7),
+    0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Liquid glass edge highlight using a masked gradient ring */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  /* soft ring light from top-left to bottom-right */
+  background:
+    radial-gradient(120% 120% at 10% 10%, rgba(255, 255, 255, 0.6), transparent 40%),
+    radial-gradient(120% 120% at 90% 90%, rgba(0, 0, 0, 0.06), transparent 40%);
+  /* ring mask leaves only the edges lit */
+  -webkit-mask: radial-gradient(100% 100% at 50% 50%, transparent 35%, black 45%), linear-gradient(black, black);
+  mask: radial-gradient(100% 100% at 50% 50%, transparent 35%, black 45%), linear-gradient(black, black);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* Inner sheen for the glass surface */
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 15px;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 40%),
+    radial-gradient(120% 60% at 50% -10%, rgba(255, 255, 255, 0.25), transparent 60%);
 }
 
 .header ul {
@@ -91,6 +127,11 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
+  margin-top: 16px;
+}
+
+.theme-toggle-item .dark-mode-toggle {
+  margin: 0 auto;
 }
 
 /* menu */
