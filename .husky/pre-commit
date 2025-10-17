@@ -1,2 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run biome check and format
 bunx --bun biome check --write ./src
 bunx --bun biome format --write ./src
+
+# Add any files that were modified by biome
+git add -u
