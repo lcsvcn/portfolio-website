@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Fade } from "react-awesome-reveal";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { ThemeProvider } from "../contexts/ThemeContext";
@@ -18,15 +19,33 @@ export default class Main extends Component {
       <ThemeProvider>
         <div>
           <Header />
-          <Greeting />
-          <Skills />
-          <StackProgress />
-          <WorkExperience />
-          <Projects />
-          <Talks />
-          <StartupProject />
-          <Profile />
-          <Footer />
+          <Fade triggerOnce duration={800} distance="24px">
+            <Greeting />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={50}>
+            <Skills />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={100}>
+            <StackProgress />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={150}>
+            <WorkExperience />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={200}>
+            <Projects />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={250}>
+            <Talks />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={300}>
+            <StartupProject />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={350}>
+            <Profile />
+          </Fade>
+          <Fade triggerOnce duration={800} distance="24px" delay={400}>
+            <Footer />
+          </Fade>
           <Top />
         </div>
       </ThemeProvider>
