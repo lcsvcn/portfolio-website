@@ -20,6 +20,7 @@
 .experience-timeline {
   position: relative;
   padding: 2rem 0;
+  z-index: 0; /* establish stacking context */
 }
 
 /* Timeline vertical line */
@@ -114,8 +115,15 @@
     margin-bottom: 2rem;
   }
 
+  /* Show a continuous, subtle center line on mobile */
   .experience-timeline::before {
-    display: none;
+    display: block;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    opacity: 0.35;
+    background: linear-gradient(180deg, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5));
+    z-index: -1; /* ensure it's behind cards and content */
   }
 
   .experience-container {

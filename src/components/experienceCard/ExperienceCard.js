@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ExperienceCard.css";
 import { Fade } from "react-awesome-reveal";
 
@@ -14,6 +14,7 @@ const GetDescBullets = ({ descBullets }) => {
 
 export default function ExperienceCard({ cardInfo, index }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Extract year from date string (e.g., "Jan 2025 – Present" -> "2025")
   const getYear = (dateString) => {
@@ -28,11 +29,30 @@ export default function ExperienceCard({ cardInfo, index }) {
     setIsExpanded(!isExpanded);
   };
 
+  // Extract first "Mon YYYY" pair from the date string
+  const getStartMonthYear = (dateString) => {
+    if (!dateString) return "";
+    const match = dateString.match(/([A-Za-z]{3,9})\s+(\d{4})/);
+    if (match) {
+      return `${match[1]} ${match[2]}`;
+    }
+    return dateString; // fallback
+  };
+
+  // Detect mobile viewport for formatting
+  useEffect(() => {
+    const update = () => setIsMobile(window.innerWidth <= 768);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const yearLabel = isMobile ? getStartMonthYear(cardInfo.date) : year;
+
   return (
     <Fade direction={isEven ? "left" : "right"} triggerOnce cascade={false} delay={index * 100} duration={800}>
       <div className={`timeline-item ${isEven ? "timeline-left" : "timeline-right"}`}>
-        <div className="timeline-year">{year}</div>
-        <div className="timeline-dot"></div>
+        <div className="timeline-year">{yearLabel}</div>
         <div className="experience-card-horizontal">
           <div className="experience-card-header">
             <img className="experience-company-logo" src={cardInfo.companylogo} alt={cardInfo.company} />
