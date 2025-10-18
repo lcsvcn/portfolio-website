@@ -1,5 +1,6 @@
 .startup-projects-main {
   display: flex;
+  align-items: flex-start;
 }
 
 .startup-projects-main > * {
@@ -26,46 +27,50 @@
 
 .startup-project-text {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 10px; /* base gap */
+  width: 100%;
+  flex: 1 1 100%; /* when parent is flex, let grid take full row width */
+}
+
+/* Default grid item styling (desktop/tablet) */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Tablet/Desktop: auto-fit as many columns as fits the width */
+@media (min-width: 769px) {
+  .startup-project-text {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
+    gap: 24px 28px; /* more spacing on larger screens */
+    width: 100%;
+  }
+  .startup-project-title {
+    font-size: 13px;
+  }
 }
 
 .project-card-description {
   color: rgb(88, 96, 105);
 }
 
-@media screen and (min-width: 100px) and (max-width: 520px) {
-  .grid-item {
-    grid-row-start: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 520px) and (max-width: 860px) {
-  .grid-item {
-    grid-row-start: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 860px) and (max-width: 1260px) {
-  .grid-item {
-    grid-row-start: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1260px) {
-  .grid-item {
-    grid-row-start: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    width: 100%;
+/* Mobile: exactly 3 items per row */
+@media (max-width: 768px) {
+  .startup-project-text {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -80,5 +85,28 @@
   .project-subtitle {
     font-size: 16px;
     text-align: center;
+  }
+  /* Centered 3-column grid with more spacing on mobile */
+  .startup-project-text {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center; /* center items inside cells */
+    justify-content: center; /* center the grid tracks */
+    gap: 16px 20px; /* extra spacing rows/cols */
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 16px; /* padding/spacing from title and description */
+  }
+  .grid-item img {
+    width: 90%;
+    max-width: 96px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+  .startup-project-title {
+    text-align: center;
+    font-size: 12px;
   }
 }
